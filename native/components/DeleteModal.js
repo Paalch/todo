@@ -27,14 +27,14 @@ export default class DeleteModal extends Component {
 
 
     render() {
-        const { isOpen, title, headerTitle } = this.props
+        const { isOpen, title, headerTitle, toggleModal } = this.props
 
         return (
             <Modal
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("DeleteModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={`Delete ${headerTitle}`} toggleModal={this.handleButtonCloseClick}/>
                 <View style={deleteMod.outerView}>

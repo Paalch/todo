@@ -80,7 +80,7 @@ export default class CreateEvent extends Component {
                     </View>
                     <View style={eventMod.view}>
 
-                        <Item last>
+                        <Item last floatingLabel>
                             <Label>
                                 Location
                             </Label>
