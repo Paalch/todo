@@ -64,7 +64,7 @@ export default class NewNoteModal extends Component {
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("EditNoteModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={"Edit Note"} toggleModal={toggleModal}/>
                 <Content>

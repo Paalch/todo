@@ -421,9 +421,10 @@ const modalButtons = StyleSheet.create({
 	},
 
 	multiLineInput: {
-	    height: 500,
+	      height: 500,
         paddingTop: 5,
         fontSize: 22
+        textAlignVertical: 'top'
 
     }
 

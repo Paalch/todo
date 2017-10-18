@@ -65,7 +65,7 @@ export default class CreateEvent extends Component {
               animationType="slide"
               transparent={false}
               visible={isOpen}
-              onRequestClose={() => {toggleModal}}
+              onRequestClose={() => {toggleModal()}}
           >
               <DefaultHeader title={"New event"} toggleModal={toggleModal}/>
               <View style={views.flex1}>
