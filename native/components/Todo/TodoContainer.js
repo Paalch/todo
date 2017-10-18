@@ -133,9 +133,8 @@ export default class TodoContainer extends Component {
         //define constants
         const { todos, newModalOpen } = this.state
         return(
-                <View style={{flex:1, backgroundColor:"white"}}>
-                    <Content>
-
+            <View style={{flex:1, backgroundColor:"white"}}>
+                <Content>
                     <NewTodoModal
                         toggleModal={this.toggleNewModal}
                         onButtonSaveClick={this.newTodo}
@@ -152,19 +151,19 @@ export default class TodoContainer extends Component {
                         />)
                     )}
                     </List>
-                  { todos.length ?
-                    <Text style={styles.endText}>
-                        End of your list
-                    </Text> :
-                    <Text style={styles.endText}>
-                        No todos
-                    </Text>
-                  }
-                    </Content>
-                    <View>
-                  <FABNewItem toggleModal={this.toggleNewModal}/>
-                    </View>
+                    { todos.length ?
+                      <Text style={styles.endText}>
+                          End of your list
+                      </Text> :
+                      <Text style={styles.endText}>
+                          No todos
+                      </Text>
+                    }
+                </Content>
+                <View>
+                    <FABNewItem toggleModal={this.toggleNewModal}/>
                 </View>
+            </View>
         )
     }
 
