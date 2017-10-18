@@ -368,6 +368,16 @@ const modalButtons = StyleSheet.create({
 		height:50,
 		justifyContent:'center',
 		width: '100%'
+    },
+
+    flexView: {
+	    flex:1,
+        flexDirection:'column',
+        justifyContent:'center'
+	},
+
+	multiLineInput: {
+	    height:500
     }
 
 })

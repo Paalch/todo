@@ -70,7 +70,7 @@ export default class NewNoteModal extends Component {
                 <Content>
                     <Form>
 
-                        <View style={{flex:1, flexDirection:'column',justifyContent:'center'}}>
+                        <View style={modalButtons.flexView}>
                             <Item floatingLabel>
                                 <Label>
                                     Title
@@ -90,7 +90,7 @@ export default class NewNoteModal extends Component {
                                     onChangeText={(tempContent) => this.setState({tempContent})}
                                     value={tempContent}
                                     multiline={true}
-                                    style={{height:500}}/>
+                                    style={modalButtons.multiLineInput}/>
                             </Item>
                         </View>
 
