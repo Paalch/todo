@@ -2,7 +2,11 @@
 
 With this application you can create and store your todos, notes and events locally on your device!
 
-### Want to run it for yourself?
+This application is made in two versions. One for the web with react, and one for mobile devices trough react-native.
+
+## Want to run it for yourself?
+
+### To run the web version locally on your device:
 
 1. Install nodejs to your system, we use version 8.6.
 
@@ -12,7 +16,7 @@ With this application you can create and store your todos, notes and events loca
 
 
 3. Enter the project directory:  
- `cd it2810-webutvikling-h17-prosjekt-3-group-22`
+ `cd it2810-webutvikling-h17-prosjekt-3-group-22/web`
  
 
 4. Install webpack and webpack-dev-server globally on your system.
@@ -29,6 +33,29 @@ With this application you can create and store your todos, notes and events loca
  
 
 ##### The website will be available locally on your machine at `localhost:8000`.
+
+
+
+### To run the Android version locally on your device:
+
+1. Install nodejs to your system, we use version 8.6.
+
+2. Install React Native on your device.
+
+3. Run an Android or iOS emulator on your machine, or connect a real device via USB.
+
+2. Clone our repository:  
+ `git clone https://github.com/IT2810/it2810-webutvikling-h17-prosjekt-3-group-22.git`
+
+
+3. Enter the project directory:  
+ `cd it2810-webutvikling-h17-prosjekt-3-group-22/native`
+ 
+5. Install project dependencies locally to the project:  
+ `npm install`
+ 
+6. Run the project  
+ `react-native run-android`
 
 <p align="center">
   <a href="Source: https://moduscreate.com/wp-content/uploads/2014/03/react-opti.png">
