@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, Text, View, Image } from 'react-native';
 import { Container, Content } from 'native-base'
-import { homeComp} from '../styles'
+import { homeComp } from '../styles'
 
 /**
  * Home screen. Short info about project.
@@ -11,10 +11,10 @@ import { homeComp} from '../styles'
 const instructions = Platform.select({
     ios: 'Your device: iOS.\n' +
     'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
+    'Cmd+D or shake for dev menu.',
     android: 'Your device: Android\n' +
     'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu'
+    'Shake or press menu button for dev menu.'
 })
 
 export default class HomeComponent extends Component {
@@ -41,18 +41,11 @@ export default class HomeComponent extends Component {
                             <Image
                                 source={require('../img/rn_logo.png')} /> {'\n'}
                             This app is run by {'\n'}
-                            React Native
+                            React Native.
 
                         </Text>
-
-
                     </Content>
-
-
-
                 </View>
-
-
         )
     }
 }

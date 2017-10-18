@@ -15,7 +15,7 @@ export default class ViewNoteModal extends Component {
                 animationType="fade"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("EditNoteModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={title} toggleModal={toggleModal}/>
                 <View style={views.flex1}>

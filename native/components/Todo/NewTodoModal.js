@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base';
 import { Modal, StyleSheet, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { modalButtons, todoNewMod } from '../../styles'
+import { modalButtons, todoNewMod, modal } from '../../styles'
 
 export default class NewTodoModal extends Component {
 
@@ -52,7 +52,7 @@ export default class NewTodoModal extends Component {
 
 
     render() {
-        const { isOpen } = this.props
+        const { isOpen, toggleModal } = this.props
         const { text } = this.state
 
         return (
@@ -60,7 +60,7 @@ export default class NewTodoModal extends Component {
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("NewTodoModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={"New Todo"}
                                toggleModal={this.handleButtonCloseClick}/>
@@ -75,7 +75,7 @@ export default class NewTodoModal extends Component {
                                     <Input
                                         onChangeText={(text) => this.setState({text})}
                                         value={text}
-                                        style={todoNewMod.addText}/>
+                                        style={modal.inputText}/>
                                 </Item>
                             </View>
 

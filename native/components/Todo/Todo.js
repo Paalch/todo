@@ -97,8 +97,10 @@ export default class Todo extends Component {
                                 </Text>
                             </Row>
                             <Row>
-                                <Text>
+
+                                <Text style={todoStyle.date}>
                                     { moment(date).format('MMM Do')}
+
                                 </Text>
                             </Row>
                         </Col>

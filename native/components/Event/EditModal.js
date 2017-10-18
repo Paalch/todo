@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import DatePicker from 'react-native-datepicker'
 import { Modal, Text, View, TouchableHighlight } from 'react-native';
-import { Header, Button, Icon, Item, Input, Form, Grid, Col, H3} from 'native-base';
+import { Header, Button, Icon, Item, Input, Form, Grid, Col, Label, H2} from 'native-base';
 import DefaultHeader from '../DefaultHeader'
-import { eventMod, views, modalButtons } from '../../styles'
+import { eventMod, views, modalButtons, modal } from '../../styles'
 
 export default class CreateEvent extends Component {
     constructor(props) {
@@ -65,46 +65,58 @@ export default class CreateEvent extends Component {
               animationType="slide"
               transparent={false}
               visible={isOpen}
-              onRequestClose={() => {toggleModal}}
+              onRequestClose={() => {toggleModal()}}
           >
               <DefaultHeader title={"New event"} toggleModal={toggleModal}/>
               <View style={views.flex1}>
                   <Form>
-                      <H3>Event name:</H3>
-                      <Item>
-                          <Input
-                              placeholder="Description"
-                              onChangeText={(text) => this.setState({text})}
-                              value={text} />
-                      </Item>
-                      <H3>Where is the event:</H3>
-                      <Item last>
-                          <Input
-                              placeholder="Where"
-                              onChangeText={(where) => this.setState({where})}
-                              value={where} />
-                      </Item>
-                      <DatePicker
-                          style={eventMod.datePick}
-                          date={this.state.date}
-                          mode="datetime"
-                          placeholder="select date"
-                          format="YYYY-MM-DD HH:mm"
-                          confirmBtnText="Confirm"
-                          cancelBtnText="Cancel"
-                          customStyles={{
-                              dateIcon: {
-                                  position: 'absolute',
-                                  left: 0,
-                                  top: 4,
-                                  marginLeft: 0
-                              },
-                              dateInput: {
-                                  marginLeft: 36
-                              }
-                          }}
-                          onDateChange={(date) => {this.setState({date: date})}}
-                      />
+                      <View style={eventMod.view}>
+                          <Item floatingLabel>
+                              <Label>
+                                  Description
+                              </Label>
+                              <Input
+                                  onChangeText={(text) => this.setState({text})}
+                                  value={text}
+                                  style={modal.inputText}/>
+                          </Item>
+                      </View>
+                      <View style={eventMod.view}>
+
+                          <Item last floatingLabel>
+                              <Label>
+                                  Location
+                              </Label>
+                              <Input
+                                  onChangeText={(where) => this.setState({where})}
+                                  value={where}
+                                  style={modal.inputText}/>
+                          </Item>
+                      </View>
+                      <View style={modal.datePickView}>
+                          <H2 style={modal.h2}>Time of the event</H2>
+                          <DatePicker
+                              style={eventMod.datePick}
+                              date={this.state.date}
+                              mode="datetime"
+                              placeholder="select date"
+                              format="YYYY-MM-DD HH:mm"
+                              confirmBtnText="Confirm"
+                              cancelBtnText="Cancel"
+                              customStyles={{
+                                  dateIcon: {
+                                      position: 'absolute',
+                                      left: 0,
+                                      top: 4,
+                                      marginLeft: 0
+                                  },
+                                  dateInput: {
+                                      marginLeft: 36
+                                  }
+                              }}
+                              onDateChange={(date) => {this.setState({date: date})}}
+                          />
+                      </View>
                   </Form>
               </View>
               <View style={modalButtons.view}>

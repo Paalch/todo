@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Item, Input, Text, Content, Title, Button, Form, H1, Grid, Col } from 'native-base';
+import { View, Item, Input, Text, Content, Title, Button, Form, H1, Grid, Col, Label } from 'native-base';
 import { Modal, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
 import { modalButtons, views } from '../../styles'
@@ -64,12 +64,20 @@ export default class EditTodoModal extends Component  {
                     <Content>
                         <Form>
                             <View style={views.flex1}>
-                                <H1>Write your todo here:</H1>
-                                <Item>
+                                <Item floatingLabel>
+                                    <Label>
+                                        Edit your todo
+                                    </Label>
                                     <Input
                                         onChangeText={(tempText) => this.setState({tempText})}
                                         value={tempText}
                                         placeholde="Write your todo here"/>
+                                        style={views.addText}/>
+
+                                        onChangeText={(tempContent) => this.setState({tempContent})}
+                                        value={tempContent}
+                                        placeholde="Write your todo here"
+
                                 </Item>
                             </View>
                         </Form>

@@ -77,7 +77,7 @@ export default class Note extends Component {
                     </Col>
 
 
-                    <Col size={25}>
+                    <Col size={25} style={noteStyle.col}>
                         <Row>
                             <Button
                                 onPress={this.toggleDeleteModal}

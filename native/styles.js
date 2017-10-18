@@ -6,7 +6,8 @@ import { StyleSheet } from 'react-native'
  */
 const views = StyleSheet.create({
     flex1: {
-        flex: 1
+        flex: 1,
+        paddingTop:5
     },
     flex2: {
         flex: 2
@@ -15,6 +16,10 @@ const views = StyleSheet.create({
         position:'absolute',
         bottom:0,
         width:'100%'
+    },
+
+    addText: {
+        fontSize: 22
     }
 })
 
@@ -96,10 +101,12 @@ const homeComp = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
+        paddingTop:15
     },
     welcome: {
         fontSize: 25,
         textAlign: 'center',
+        fontWeight: 'bold',
         marginBottom: 10,
         marginLeft: 15,
         marginRight: 15
@@ -162,6 +169,9 @@ const deleteMod = StyleSheet.create({
 const noteStyle = StyleSheet.create({
     titleStyle: {
         fontSize:21,
+    },
+    col: {
+        margin:10
     },
     dateStyle: {
         color:'#999999'
@@ -309,6 +319,10 @@ const eventCont = StyleSheet.create({
     },
     dateText: {
         fontSize: 23
+    },
+
+    dateButton: {
+        backgroundColor: '#767676'
     }
 })
 
@@ -317,7 +331,11 @@ const eventCont = StyleSheet.create({
  */
 const eventMod = StyleSheet.create({
     datePick: {
-        width: 200
+        width: 250,
+    },
+
+    view: {
+        paddingTop: 5
     }
 })
 
@@ -349,7 +367,11 @@ const todoStyle = StyleSheet.create({
     createButton: {
         backgroundColor:'#767676',
         marginLeft:-1
-    }
+    },
+
+    date: {
+        color:'#999999'
+    },
 })
 
 const modalButtons = StyleSheet.create({
@@ -392,12 +414,18 @@ const modalButtons = StyleSheet.create({
 
     flexView: {
 	    flex:1,
+        marginTop: 5,
+        marginBottom: 5,
         flexDirection:'column',
         justifyContent:'center'
 	},
 
 	multiLineInput: {
-	    height:500
+	      height: 500,
+        paddingTop: 5,
+        fontSize: 22
+        textAlignVertical: 'top'
+
     }
 
 })
@@ -431,11 +459,30 @@ const todoNewMod = StyleSheet.create({
         marginTop: 7,
         marginLeft: 7,
         marginRight: 7,
-        backgroundColor: "#f5fcff"
+        backgroundColor: "white"
     },
     addText: {
-        fontSize: 20
+        fontSize: 22
     }
+})
+
+const modal = StyleSheet.create({
+    inputText: {
+        fontSize: 22
+    },
+
+    h2: {
+        fontSize:16,
+        paddingBottom:5,
+        color:'#585858'
+
+    },
+
+    datePickView: {
+        paddingTop: 15,
+        paddingLeft: 20,
+
+    },
 })
 
 
@@ -443,4 +490,4 @@ export { views, button, deleteMod, icons,
          navFooter, routes, homeComp, modalHead,
          noteStyle, noteCont, noteVwMod, noteNewMod,
          eventStyle, eventCont, eventMod,
-         todoStyle, todoCont, todoNewMod, modalButtons }
+         todoStyle, todoCont, todoNewMod, modalButtons, modal }

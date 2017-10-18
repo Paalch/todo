@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base'
 import { Modal, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { noteNewMod, views, button, modalButtons } from '../../styles'
+import { noteNewMod, views, button, modalButtons, modal } from '../../styles'
 
 export default class NewNoteModal extends Component {
 
@@ -54,7 +54,7 @@ export default class NewNoteModal extends Component {
 
     
     render() {
-        const { isOpen } = this.props
+        const { isOpen, toggleModal } = this.props
         const { title, content } = this.state
 
         return (
@@ -62,7 +62,7 @@ export default class NewNoteModal extends Component {
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("NewNoteModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={"New Note"} toggleModal={this.handleButtonCloseClick}/>
                     <Content >
@@ -74,7 +74,8 @@ export default class NewNoteModal extends Component {
                                     </Label>
                                     <Input
                                         onChangeText={(title) => this.setState({title})}
-                                        value={title}/>
+                                        value={title}
+                                        style={modal.inputText}/>
                                 </Item>
                             </View>
 

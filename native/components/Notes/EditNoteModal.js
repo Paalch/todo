@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Label, Item, Input, Content, Form, Grid, Col } from 'native-base';
 import { Modal, Text, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { modalButtons } from '../../styles'
+import { modalButtons, editNote, modal } from '../../styles'
 
 export default class NewNoteModal extends Component {
 
@@ -64,7 +64,7 @@ export default class NewNoteModal extends Component {
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("EditNoteModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={"Edit Note"} toggleModal={toggleModal}/>
                 <Content>
@@ -77,7 +77,8 @@ export default class NewNoteModal extends Component {
                                 </Label>
                                 <Input
                                     onChangeText={(tempTitle) => this.setState({tempTitle})}
-                                    value={tempTitle}/>
+                                    value={tempTitle}
+                                    style={modal.inputText}/>
                             </Item>
                         </View>
 
