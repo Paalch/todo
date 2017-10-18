@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base';
 import { Modal, StyleSheet, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { modalButtons } from '../../styles'
+import { modalButtons, todoNewMod } from '../../styles'
 
 export default class NewTodoModal extends Component {
 
