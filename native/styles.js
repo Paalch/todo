@@ -96,10 +96,12 @@ const homeComp = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
+        paddingTop:15
     },
     welcome: {
         fontSize: 25,
         textAlign: 'center',
+        fontWeight: 'bold',
         marginBottom: 10,
         marginLeft: 15,
         marginRight: 15
