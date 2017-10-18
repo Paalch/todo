@@ -138,15 +138,14 @@ export default class TodoContainer extends Component {
                             checkBoxClick={this.checkBoxClick}
                             deleteItem={this.deleteItem}
                             onButtonClick = {this.newTodo}
-                            updateToDos = {this.updateTodos}
+                            updateTodos = {this.updateTodos}
                         />
                     )}
 
-                    { todos.length ?
-                        undefined :
-                        <Header as='h3' block textAlign='center'>
+                    { !todos.length
+                        ? <Header as='h3' block textAlign='center'>
                             You have no todos
-                        </Header>
+                        </Header> : undefined
                     }
                 </Container>
                 <Divider hidden />
