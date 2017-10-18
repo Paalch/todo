@@ -5,7 +5,6 @@ import DefaultHeader from '../DefaultHeader'
 import { modalButtons } from '../../styles'
 
 
-
 export default class EditTodoModal extends Component  {
 
     constructor(props) {
@@ -61,10 +60,10 @@ export default class EditTodoModal extends Component  {
                 visible={isOpen}
                 onRequestClose={() => {toggleModal()}}>
                 <DefaultHeader title={"Edit Todo"} toggleModal={toggleModal}/>
-                <View style={{flex:1}}>
+                <View style={views.flex1}>
                     <Content>
                         <Form>
-                            <View style={{flex:1}}>
+                            <View style={views.flex1}>
                                 <H1>Write your todo here:</H1>
                                 <Item>
                                     <Input

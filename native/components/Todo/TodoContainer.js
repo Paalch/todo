@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { View, Content, List, Text } from 'native-base'
-import { AsyncStorage, StyleSheet } from 'react-native';
+import { AsyncStorage } from 'react-native';
 import Todo from './Todo'
 import moment from "moment";
 import FABNewItem from '../FABNewItem'
 import NewTodoModal from './NewTodoModal'
+import { todoCont } from '../../styles'
 
 export default class TodoContainer extends Component {
     constructor(props) {
@@ -133,8 +134,9 @@ export default class TodoContainer extends Component {
         //define constants
         const { todos, newModalOpen } = this.state
         return(
-            <View style={{flex:1, backgroundColor:"white"}}>
-                <Content>
+                <View style={todoCont.view}>
+                    <Content>
+
                     <NewTodoModal
                         toggleModal={this.toggleNewModal}
                         onButtonSaveClick={this.newTodo}
@@ -151,35 +153,23 @@ export default class TodoContainer extends Component {
                         />)
                     )}
                     </List>
-                    { todos.length ?
-                      <Text style={styles.endText}>
-                          End of your list
-                      </Text> :
-                      <Text style={styles.endText}>
-                          No todos
-                      </Text>
-                    }
-                </Content>
-                <View>
-                    <FABNewItem toggleModal={this.toggleNewModal}/>
+
+                  { todos.length ?
+                    <Text style={todoCont.endText}>
+                        End of your list
+                    </Text> :
+                    <Text style={todoCont.endText}>
+                        No todos
+                    </Text>
+                  }
+                    </Content>
+                    <View>
+                  <FABNewItem toggleModal={this.toggleNewModal}/>
+                    </View>
+
                 </View>
             </View>
         )
     }
 
 }
-const styles = StyleSheet.create({
-
-  endText: {
-    flex:1,
-    justifyContent:'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    fontSize: 25,
-    color:'#999999',
-    marginBottom:25,
-    marginTop:30,
-
-  }
-
-})
