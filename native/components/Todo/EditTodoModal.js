@@ -10,25 +10,25 @@ export default class EditTodoModal extends Component  {
     constructor(props) {
         super(props)
 
-        //Sets state, tempContent is the text in the textfield and content is the text from the todo object
+        //Sets state, tempText is the text in the textfield and text is the text from the todo object
         this.state = {
-            tempContent: this.props.content,
-            content: this.props.content,
+            tempText: this.props.text,
+            text: this.props.text,
         }
     }
 
-  /**
-   * Button handler for save button
-   */
+    /**
+     * Button handler for save button
+     */
     handleButtonSaveClick = () => {
-        const { tempContent } = this.state
-        //Checks that the content in not empty
-        if(tempContent !== "") {
-            this.props.onButtonSaveClick(tempContent)
+        const { tempText } = this.state
+        //Checks that the text in not empty
+        if(tempText !== "") {
+            this.props.onButtonSaveClick(tempText)
             //resets the state
             this.setState({
-                tempContent: '',
-                content: ''
+                tempText: '',
+                text: ''
             })
             //Hides the modal
             this.props.toggleModal()
@@ -37,21 +37,21 @@ export default class EditTodoModal extends Component  {
         }
     }
 
-	/**
-	 * Handle for button close click.
-	 * Resets the original content to state
-	 * Closes model
-	 */
-	handleButtonCloseClick = () => {
-		const {toggleModal} = this.props
-		toggleModal()
+    /**
+     * Handle for button close click.
+     * Resets the original text to state
+     * Closes model
+     */
+    handleButtonCloseClick = () => {
+        const {toggleModal} = this.props
+        toggleModal()
 
-	}
+    }
 
     render() {
         //define constants
         const { toggleModal, isOpen } = this.props
-        const { tempContent } = this.state
+        const { tempText } = this.state
 
         return (
             <Modal
@@ -67,14 +67,14 @@ export default class EditTodoModal extends Component  {
                                 <H1>Write your todo here:</H1>
                                 <Item>
                                     <Input
-                                        onChangeText={(tempContent) => this.setState({tempContent})}
-                                        value={tempContent}
+                                        onChangeText={(tempText) => this.setState({tempText})}
+                                        value={tempText}
                                         placeholde="Write your todo here"/>
                                 </Item>
                             </View>
                         </Form>
                     </Content>
-                 </View>
+                </View>
 
                 <View style={modalButtons.view}>
                     <Grid>
