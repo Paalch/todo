@@ -4,7 +4,7 @@ import { Col, Grid, Row } from 'react-native-easy-grid';
 import moment from 'moment'
 import EditTodoModal from "./EditTodoModal"
 import DeleteModal from '../DeleteModal'
-import { todoStyle, button, icons } from '../../styles'
+import { todoStyle, icons } from '../../styles'
 
 
 export default class Todo extends Component {
@@ -140,17 +140,3 @@ export default class Todo extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-
-    todoStyle: {
-        marginTop: 20
-    },
-
-    starStyle: {
-        color: "#fbbd08",
-        marginLeft: 28,
-        marginTop: 15
-    }
-
-})

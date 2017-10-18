@@ -168,7 +168,6 @@ export default class TodoContainer extends Component {
                     </View>
 
                 </View>
-            </View>
         )
     }
 
