@@ -101,8 +101,8 @@ export default class NewNoteModal extends Component {
                         <View style={views.buttonView}>
                             <Button
                                 block
-                                onPress={this.handleButtonSaveClick}
-                                style={button.successColor}>
+                                style={{backgroundColor:'#21BA45'}}
+                                onPress={this.handleButtonSaveClick}>
                                 <Text>Add</Text>
                             </Button>
                         </View>

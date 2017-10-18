@@ -153,6 +153,7 @@ export default class TodoContainer extends Component {
                         />)
                     )}
                     </List>
+
                   { todos.length ?
                     <Text style={todoCont.endText}>
                         End of your list
@@ -165,9 +166,10 @@ export default class TodoContainer extends Component {
                     <View>
                   <FABNewItem toggleModal={this.toggleNewModal}/>
                     </View>
+
                 </View>
+            </View>
         )
     }
 
 }
-

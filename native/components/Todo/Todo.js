@@ -75,7 +75,7 @@ export default class Todo extends Component {
             <ListItem style={{backgroundColor: todo.checked ? '#21ba45' : 'white' }}>
                 <Content>
                     <Grid>
-                        <Col size={29}>
+                        <Col size={35}>
                             <Row>
                                 <CheckBox
                                     onPress={this.handleCheckBoxClick}
@@ -87,7 +87,9 @@ export default class Todo extends Component {
                                     onPress={this.markAsFavorite}/>
                             </Row>
                         </Col>
-                        <Col size={76} style={todoStyle.col}>
+
+                        <Col size={74} style={todoStyle.col}>
+
                             <Row>
                                 <Text
                                     style={todoStyle.todoText}>
@@ -100,8 +102,8 @@ export default class Todo extends Component {
                                 </Text>
                             </Row>
                         </Col>
-                        <Col size={39}>
-                            <Item>
+                        <Col size={42}>
+                            <Row>
                                 <Button
                                     onPress={this.toggleDeleteModal}
                                     style={todoStyle.closeButton}>
@@ -117,7 +119,7 @@ export default class Todo extends Component {
                                         name='create'
                                         style={icons.whiteColor}/>
                                 </Button>
-                            </Item>
+                            </Row>
                         </Col>
                     </Grid>
                     <EditTodoModal toggleModal={this.toggleEditModal}
@@ -138,3 +140,17 @@ export default class Todo extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+
+    todoStyle: {
+        marginTop: 20
+    },
+
+    starStyle: {
+        color: "#fbbd08",
+        marginLeft: 28,
+        marginTop: 15
+    }
+
+})
