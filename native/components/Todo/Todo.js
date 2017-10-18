@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { CheckBox, Button, Icon, Content, Text, ListItem, Item } from 'native-base'
 import { Col, Grid, Row } from 'react-native-easy-grid';
-import { StyleSheet } from 'react-native'
 import moment from 'moment'
 import EditTodoModal from "./EditTodoModal"
 import DeleteModal from '../DeleteModal'
+import { todoStyle, button, icons } from '../../styles'
 
 
 export default class Todo extends Component {
@@ -72,25 +72,27 @@ export default class Todo extends Component {
         const { date, editModalOpen, deleteModalOpen } = this.state
         const { todo, onButtonClick, deleteItem } = this.props
         return(
-            <ListItem style={{backgroundColor: todo.checked ? "#4BB543" : "white" }}>
+            <ListItem style={{backgroundColor: todo.checked ? '#21ba45' : 'white' }}>
                 <Content>
                     <Grid>
                         <Col size={35}>
                             <Row>
                                 <CheckBox
                                     onPress={this.handleCheckBoxClick}
-                                    style={styles.todoStyle}
+                                    style={todoStyle.todo}
                                     checked={todo.checked} />
                                 <Icon
                                     name={todo.isStar ? 'md-star' : 'star'}
-                                    style={styles.starStyle}
+                                    style={todoStyle.star}
                                     onPress={this.markAsFavorite}/>
                             </Row>
                         </Col>
-                        <Col size={74} style={{marginRight: 10}}>
+
+                        <Col size={74} style={todoStyle.col}>
+
                             <Row>
                                 <Text
-                                    style={{fontSize: 21, paddingBottom: 2}}>
+                                    style={todoStyle.todoText}>
                                     { todo.text }
                                 </Text>
                             </Row>
@@ -104,22 +106,18 @@ export default class Todo extends Component {
                             <Row>
                                 <Button
                                     onPress={this.toggleDeleteModal}
-                                    style={{
-                                        backgroundColor:"#db2828",
-                                        paddingRight:4}}>
+                                    style={todoStyle.closeButton}>
                                     <Icon
                                         name='close'
-                                        style={{color:'white'}}
+                                        style={icons.whiteColor}
                                     />
                                 </Button>
                                 <Button
                                     onPress={this.toggleEditModal}
-                                    style={{
-                                        backgroundColor:'#767676',
-                                        marginLeft:-1}}>
+                                    style={todoStyle.createButton}>
                                     <Icon
                                         name='create'
-                                        style={{color:'white'}}/>
+                                        style={icons.whiteColor}/>
                                 </Button>
                             </Row>
                         </Col>
