@@ -3,6 +3,7 @@ import DatePicker from 'react-native-datepicker'
 import { Modal, Text, View } from 'react-native';
 import { Header, Button, Icon, Item, Input, Form, Grid, Col, H3 } from 'native-base';
 import DefaultHeader from '../DefaultHeader'
+import { eventMod, views, button } from '../../styles'
 
 import moment from 'moment'
 
@@ -63,7 +64,7 @@ export default class CreateEvent extends Component {
                 onRequestClose={() => {toggleModal}}
             >
                 <DefaultHeader title={"New event"} toggleModal={toggleModal}/>
-                <View style={{flex:1}}>
+                <View style={views.flex1}>
                 <Form>
                     <H3>Event name:</H3>
                    <Item>
@@ -83,7 +84,7 @@ export default class CreateEvent extends Component {
                 </Form>
                     <H3>At what time is the event starting:</H3>
                 <DatePicker
-                    style={{width: 200}}
+                    style={eventMod.datePick}
                     date={this.state.date}
                     mode="datetime"
                     placeholder="select date"
@@ -105,17 +106,13 @@ export default class CreateEvent extends Component {
                 />
                 </View>
 
-                <View style={{flex:1}}>
+                <View style={views.flex1}>
                     <Grid>
                         <Col>
-                            <View style={{
-                                position:'absolute',
-                                bottom:0,
-                                width:'100%'}}>
+                            <View style={views.buttonView}>
                                 <Button block
-                                        success
                                         onPress={this.createEvent}
-                                        style={{backgroundColor:"#21BA45"}}>
+                                        style={button.successColor}>
                                     <Text>
                                         Add
                                     </Text>
@@ -124,13 +121,10 @@ export default class CreateEvent extends Component {
                         </Col>
 
                         <Col>
-                            <View style={{
-                                position:'absolute',
-                                bottom:0,
-                                width:'100%'}}>
+                            <View style={views.buttonView}>
                                 <Button block
                                         onPress={this.handleClose}
-                                        style={{backgroundColor:"#767676"}}>
+                                        style={button.closeColor}>
                                     <Text>Close</Text>
                                 </Button>
                             </View>

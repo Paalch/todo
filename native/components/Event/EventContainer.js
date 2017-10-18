@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { AsyncStorage, StyleSheet } from 'react-native'
+import { AsyncStorage } from 'react-native'
 import { Content, Button, Text, View, Icon } from 'native-base';
 import moment from 'moment'
 
 import Event from './Event'
 import CreateEvent from './CreateEvent'
 import FABNewItem from '../FABNewItem'
+import {eventCont} from '../../styles'
 
 export default class EventContainer extends Component {
     constructor(props) {
@@ -131,14 +132,9 @@ export default class EventContainer extends Component {
           })
 
       return (
-        <View style={{flex:1, backgroundColor:"white"}}>
+        <View style={eventCont.outerView}>
         <Content>
-              <View style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-around',
-                  alignItems: 'center',
-                  marginTop: 10
-              }}>
+              <View style={eventCont.contView}>
                   <View>
                     <Button light onPress={this.decrementMonth}>
                       <Icon name='arrow-back' />
@@ -146,7 +142,7 @@ export default class EventContainer extends Component {
                     </Button>
                   </View>
                   <View>
-                    <Text style={{ fontSize: 23}}>{month.format('MMMM')}</Text>
+                    <Text style={eventCont.dateText}>{month.format('MMMM')}</Text>
                   </View>
                   <View>
                     <Button light onPress={this.incrementMonth}>
@@ -179,10 +175,10 @@ export default class EventContainer extends Component {
                   )
                 })}
                 { sortedEvents.length ?
-                  <Text style={styles.endText}>
+                  <Text style={eventCont.endText}>
                       End of your list
                   </Text> :
-                  <Text style={styles.endText}>
+                  <Text style={eventCont.endText}>
                       No events
                   </Text>
                 }
@@ -194,18 +190,3 @@ export default class EventContainer extends Component {
       )
     }
 }
-const styles = StyleSheet.create({
-
-  endText: {
-    flex:1,
-    justifyContent:'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    fontSize: 25,
-    color:'#999999',
-    marginBottom:25,
-    marginTop:30,
-
-  }
-
-})

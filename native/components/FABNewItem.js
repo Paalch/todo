@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {  View, Icon, Fab } from 'native-base';
+import { views, button } from '../styles'
 
 export default class FABNewItem extends Component {
 
@@ -14,12 +15,12 @@ export default class FABNewItem extends Component {
 
   render() {
       return (
-          <View style={{ flex: 1 }}>
+          <View style={views.flex1}>
               <Fab
                   active
                   direction="up"
                   containerStyle={{ }}
-                  style={{ backgroundColor: '#21BA45' }}
+                  style={button.successColor}
                   position="bottomRight"
                   onPress={this.handleNewNote}>
                   <Icon name="add"/>

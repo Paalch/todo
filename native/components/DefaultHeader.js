@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Header, Content, Left ,Right, Title, Body, Icon, Button } from 'native-base';
-import {modalHead} from '../styles'
+import { modalHead } from '../styles'
 
 export default class DefaultHeader extends Component {
 

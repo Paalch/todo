@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
 import { List, ListItem, Left, Right, Body, Text, Button, Icon, Grid, Col, Row} from 'native-base';
 
 import moment from 'moment'
 
 import EditModal from './EditModal'
 import DeleteModal from '../DeleteModal'
+import { eventStyle, icons } from '../../styles'
 
 
 export default class Event extends Component {
@@ -51,7 +51,7 @@ export default class Event extends Component {
         const { editModalOpen, deleteModalOpen } = this.state
 
         return(
-            <List style={{marginTop: 10}}>
+            <List style={eventStyle.outerList}>
                 {isNew ?
                     <ListItem itemDivider>
                         <Text>
@@ -64,15 +64,15 @@ export default class Event extends Component {
                           <Col size={80}>
                               <Row>
                                   <Left>
-                                      <Text style={styles.titleStyle}>
+                                      <Text style={eventStyle.titleStyle}>
                                           {event.text}
                                       </Text>
                                   </Left>
                                   <Body>
-                                      <Text style={styles.whereStyle}>
+                                      <Text style={eventStyle.whereStyle}>
                                           {event.where}
                                       </Text>
-                                      <Text style={styles.dateStyle}>
+                                      <Text style={eventStyle.dateStyle}>
                                           {moment(event.date).format('HH:mm')}
                                       </Text>
                                   </Body>
@@ -83,15 +83,13 @@ export default class Event extends Component {
                               <Row>
                               <Button
                                   onPress={this.toggleDeleteModal}
-                                  style={{backgroundColor:"#db2828", paddingRight:4}}>
-                                  <Icon name='close' style={{color:'white'}}/>
+                                  style={eventStyle.closeButton}>
+                                  <Icon name='close' style={icons.whiteColor}/>
                               </Button>
                               <Button
                                   onPress={this.toggleEditModal}
-                                  style={{
-                                      backgroundColor:'#767676',
-                                      marginLeft:-1}}>
-                                  <Icon name='create' style={{color:'white'}}/>
+                                  style={eventStyle.createButton}>
+                                  <Icon name='create' style={icons.whiteColor}/>
                               </Button>
                               </Row>
                         </Col>
@@ -111,8 +109,7 @@ export default class Event extends Component {
                         deleteFunction={deleteItem}
                         object={event}
                         title={event.text}
-                        headerTitle={"event"}
-                    />
+                        headerTitle={"event"}/>
 
                 </ListItem>
             </List>
@@ -120,18 +117,3 @@ export default class Event extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-
-    titleStyle: {
-        fontSize:19,
-    },
-
-    whereStyle: {
-        fontSize:16,
-    },
-
-    dateStyle: {
-        color:'#999999',
-    }
-
-})
