@@ -249,23 +249,6 @@ const noteNewMod = StyleSheet.create({
 })
 
 /**
- * EditNoteModal.js
- */
-const noteEditMod = StyleSheet.create({
-    inputCont: {
-        height: 200,
-        textAlignVertical: 'top'
-    },
-    view: {
-        flex: 1,
-        marginTop: 7,
-        marginLeft: 7,
-        marginRight: 7,
-        backgroundColor: "#f5fcff"
-    }
-})
-
-/**
  * Event.js
  */
 const eventStyle = StyleSheet.create({
@@ -357,6 +340,38 @@ const todoStyle = StyleSheet.create({
     }
 })
 
+const modalButtons = StyleSheet.create({
+	text: {
+		color:'white',
+		fontWeight:'bold'
+	},
+
+	save: {
+		backgroundColor:'#21BA45',
+		flex:1,
+		justifyContent:'center',
+		alignItems:'center',
+		height:'100%'
+	},
+
+	close: {
+		backgroundColor:'#767676',
+		flex:1,
+		justifyContent:'center',
+		alignItems:'center',
+		height:'100%'
+	},
+
+	view: {
+		position:'absolute',
+		bottom: 0,
+		height:50,
+		justifyContent:'center',
+		width: '100%'
+    }
+
+})
+
 
 
 
@@ -364,6 +379,6 @@ const todoStyle = StyleSheet.create({
 
 export { views, button, deleteMod, icons,
          navFooter, routes, homeComp, modalHead,
-         noteStyle, noteCont, noteVwMod, noteNewMod, noteEditMod,
+         noteStyle, noteCont, noteVwMod, noteNewMod,
          eventStyle, eventCont, eventMod,
-         todoStyle, }
+         todoStyle, modalButtons }

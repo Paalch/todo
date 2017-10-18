@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Label, Item, Input, Content, Form, Grid, Col } from 'native-base';
 import { Modal,Text,TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import {views, button, noteEditMod } from '../../styles'
+import { modalButtons } from '../../styles'
 
 export default class NewNoteModal extends Component {
 
@@ -97,25 +97,14 @@ export default class NewNoteModal extends Component {
                     </Form>
                 </Content>
 
-                <View style={{position:'absolute',
-                    bottom: 0,
-					height:50,
-					justifyContent:'center',
-					width: '100%'}}>
+                <View style={modalButtons.view}>
                     <Grid>
                         <Col>
                     <TouchableHighlight
                         onPress={this.handleButtonSaveClick}
-                        style={{
-                            backgroundColor:'#21BA45',
-							flex:1,
-							justifyContent:'center',
-							alignItems:'center',
-                            height:'100%'}}>
+                        style={modalButtons.save}>
 
-                        <Text style={{
-							color:'white',
-                            fontWeight:'bold'}}>
+                        <Text style={modalButtons.text}>
                             SAVE
                         </Text>
 
@@ -125,16 +114,9 @@ export default class NewNoteModal extends Component {
 
                             <TouchableHighlight
                                 onPress={this.handleButtonClose}
-                                style={{
-                                    backgroundColor:'#767676',
-                                    flex:1,
-                                    justifyContent:'center',
-                                    alignItems:'center',
-                                    height:'100%'}}>
+                                style={modalButtons.close}>
 
-                                <Text style={{
-                                    color:'white',
-                                    fontWeight:'bold'}}>
+                                <Text style={modalButtons.text}>
                                     CLOSE
                                 </Text>
                             </TouchableHighlight>
