@@ -71,7 +71,7 @@ export default class Note extends Component {
                         </Row>
                         <Row>
                             <Text style={noteStyle.dateStyle}>
-                                {moment(note.date).calendar()}
+                                { moment(note.date).format('H:mm, MMM Do YYYY')}
                             </Text>
                         </Row>
                     </Col>
