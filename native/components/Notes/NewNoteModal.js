@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base'
 import { Modal, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { noteNewMod, views, button, modalButtons } from '../../styles'
+import { noteNewMod, views, button, modalButtons, modal } from '../../styles'
 
 export default class NewNoteModal extends Component {
 
@@ -74,7 +74,8 @@ export default class NewNoteModal extends Component {
                                     </Label>
                                     <Input
                                         onChangeText={(title) => this.setState({title})}
-                                        value={title}/>
+                                        value={title}
+                                        style={modal.inputText}/>
                                 </Item>
                             </View>
 
