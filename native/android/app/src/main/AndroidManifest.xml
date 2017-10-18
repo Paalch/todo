@@ -13,12 +13,12 @@
     <application
       android:name=".MainApplication"
       android:allowBackup="true"
-      android:label="@string/app_name"
-      android:icon="@mipmap/ic_launcher"
+      android:label="PIMP"
+      android:icon="@mipmap/proj3_icon"
       android:theme="@style/AppTheme">
       <activity
         android:name=".MainActivity"
-        android:label="@string/app_name"
+        android:label="PIMP"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:windowSoftInputMode="adjustResize">
         <intent-filter>
