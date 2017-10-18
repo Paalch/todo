@@ -117,7 +117,7 @@ export default class NewNoteModal extends Component {
                                 style={modalButtons.close}>
 
                                 <Text style={modalButtons.text}>
-                                    CLOSE
+                                    CANCEL
                                 </Text>
                             </TouchableHighlight>
 

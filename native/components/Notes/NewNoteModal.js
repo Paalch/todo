@@ -102,7 +102,7 @@ export default class NewNoteModal extends Component {
                                     style={modalButtons.save}>
 
                                     <Text style={modalButtons.text}>
-                                        SAVE
+                                        ADD
                                     </Text>
 
                                 </TouchableHighlight>
@@ -114,7 +114,7 @@ export default class NewNoteModal extends Component {
                                     style={modalButtons.close}>
 
                                     <Text style={modalButtons.text}>
-                                        CLOSE
+                                        CANCEL
                                     </Text>
                                 </TouchableHighlight>
 
