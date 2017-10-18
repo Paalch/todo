@@ -56,7 +56,8 @@
       "\\.css$": "identity-obj-proxy"
     },
     "setupFiles": [
-      "raf/polyfill"
+      "raf/polyfill",
+      "jest-localstorage-mock"
     ]
   },
   "dependencies": {

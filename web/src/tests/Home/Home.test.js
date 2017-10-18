@@ -1,14 +1,14 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
-import Todo from '../../components/Todo/EditTodoModal';
+import HomeContainer from '../../components/Home/HomeContainer';
 import Adapter from 'enzyme-adapter-react-15'
 import toJson from 'enzyme-to-json'
 
 Enzyme.configure({ adapter: new Adapter() });
 
-test('Todo component should render as expected', () => {
-  const component = shallow(<EditToDoModal/>);
+test('HomeContainer component should render as expected', () => {
+  const component = shallow(<HomeContainer />);
   const tree = toJson(component);
-  console.log(tree);
   expect(tree).toMatchSnapshot();
 });
+
