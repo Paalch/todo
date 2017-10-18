@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View,Content, Label, Grid, Col, Button, Text } from 'native-base';
 import { Modal } from 'react-native'
 import DefaultHeader from './DefaultHeader'
+import { views, button, deleteMod } from '../styles'
 
 export default class DeleteModal extends Component {
 
@@ -36,39 +37,35 @@ export default class DeleteModal extends Component {
                 onRequestClose={() => {alert("DeleteModal has been closed.")}}>
 
                 <DefaultHeader title={`Delete ${headerTitle}`} toggleModal={this.handleButtonCloseClick}/>
-                <View style={{
-                    flex: 1,
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center'}}>
+                <View style={deleteMod.outerView}>
 
-                            <Label style={{fontSize:30,}}>
+                            <Label style={deleteMod.delLabel}>
                                 Delete this {headerTitle}? {'\n'}
                             </Label>
 
-                    <Label style={{fontSize:20, fontWeight:'bold', paddingTop:20}}>
+                    <Label style={deleteMod.titleLabel}>
                         '{ title }'
                     </Label>
                 </View>
                 <Grid>
 
                     <Col>
-                        <View style={{position:'absolute',bottom:0, width:'100%'}}>
+                        <View style={views.buttonView}>
                             <Button
                                 block
                                 onPress={this.handleButtonDeleteClick}
-                            style={{backgroundColor:'#db2828'}}>
+                                style={button.failColor}>
                                 <Text>Delete</Text>
                             </Button>
                         </View>
                     </Col>
 
                     <Col>
-                        <View style={{position:'absolute',bottom:0, width:'100%'}}>
+                        <View style={views.buttonView}>
                             <Button
                                 block
                                 onPress={this.handleButtonCloseClick}
-                                style={{backgroundColor:"#767676"}}>
+                                style={button.closeColor}>
                                 <Text>
                                     Cancel
                                 </Text>

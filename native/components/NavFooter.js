@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { StyleProvider, Container, Header, Content,View, Footer, FooterTab, Button, Icon, Text } from 'native-base'
 import { Actions } from 'react-native-router-flux'
-
 import { navFooter } from '../styles'
 
 /**

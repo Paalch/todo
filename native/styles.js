@@ -27,6 +27,21 @@ const button = StyleSheet.create({
     },
     successColor: {
         backgroundColor: '#21ba45'
+    },
+    failColor: {
+        backgroundColor:"#db2828"
+    },
+    white: {
+        backgroundColor: '#ffffff'
+    }
+})
+
+/**
+ * Simple icon styles.
+ */
+const icons = StyleSheet.create({
+    whiteColor: {
+        color: '#ffffff'
     }
 })
 
@@ -111,6 +126,26 @@ const homeComp = StyleSheet.create({
         marginRight: 15
     },
 });
+
+/**
+ * DeleteModal.js
+ */
+const deleteMod = StyleSheet.create({
+    outerView: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    delLabel: {
+        fontSize: 30
+    },
+    titleLabel: {
+        fontSize:20,
+        fontWeight:'bold',
+        paddingTop:20
+    }
+})
 
 /**
  * Note.js
@@ -230,9 +265,105 @@ const noteEditMod = StyleSheet.create({
     }
 })
 
+/**
+ * Event.js
+ */
+const eventStyle = StyleSheet.create({
+    outerList: {
+        marginTop: 10
+    },
+    titleStyle: {
+        fontSize:19,
+    },
+
+    whereStyle: {
+        fontSize:16,
+    },
+
+    dateStyle: {
+        color:'#999999',
+    },
+    closeButton: {
+        backgroundColor:"#db2828",
+        paddingRight:4
+    },
+    createButton: {
+        backgroundColor:'#767676',
+        marginLeft:-1
+    }
+})
+
+const eventCont = StyleSheet.create({
+    outerView: {
+        flex:1,
+        backgroundColor:"white"
+    },
+    contView: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginTop: 10
+    },
+    endText: {
+        flex:1,
+        justifyContent:'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        fontSize: 25,
+        color:'#999999',
+        marginBottom:25,
+        marginTop:30,
+
+    },
+    dateText: {
+        fontSize: 23
+    }
+})
+
+/**
+ * CreateEvent.js and EditModal.js
+ */
+const eventMod = StyleSheet.create({
+    datePick: {
+        width: 200
+    }
+})
+
+const todoStyle = StyleSheet.create({
+    todo: {
+        justifyContent : 'center',
+        alignItems: 'center',
+        marginTop: 20
+    },
+    star: {
+        color:'#fbbd08',
+        marginLeft: 18,
+        marginTop: 15
+    },
+    col: {
+        marginRight: 10,
+    },
+    todoText: {
+        fontSize: 21,
+        paddingBottom: 2
+    },
+    closeButton: {
+        backgroundColor:"#db2828",
+        paddingRight:4
+    },
+    createButton: {
+        backgroundColor:'#767676',
+        marginLeft:-1
+    }
+})
 
 
 
-export { views, button,
+
+
+
+export { views, button, deleteMod, icons,
          navFooter, routes, homeComp, modalHead,
-         noteStyle, noteCont, noteVwMod, noteNewMod, noteEditMod}
+         noteStyle, noteCont, noteVwMod, noteNewMod, noteEditMod,
+         eventStyle, eventCont, eventMod,
+         todoStyle, }
