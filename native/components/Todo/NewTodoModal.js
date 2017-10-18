@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base';
-import { Modal, StyleSheet } from 'react-native'
+import { Modal } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
+import { todoNewMod, button, views } from "../../styles";
 
 export default class NewTodoModal extends Component {
 
@@ -61,18 +62,20 @@ export default class NewTodoModal extends Component {
                 visible={isOpen}
                 onRequestClose={() => {alert("NewTodoModal has been closed.")}}>
 
-                <DefaultHeader title={"New Todo"} toggleModal={this.handleButtonCloseClick}/>
-                <View style={styles.view}>
+                <DefaultHeader title={"New Todo"}
+                               toggleModal={this.handleButtonCloseClick}/>
+                <View style={todoNewMod.view}>
                     <Content >
                         <Form>
-                            <View style={styles.view}>
+                            <View style={todoNewMod.view}>
                                 <Item floatingLabel>
                                     <Label>
                                         Your todo
                                     </Label>
                                     <Input
                                         onChangeText={(text) => this.setState({text})}
-                                        value={text}/>
+                                        value={text}
+                                        style={todoNewMod.addText}/>
                                 </Item>
                             </View>
 
@@ -83,22 +86,22 @@ export default class NewTodoModal extends Component {
                 <Grid>
 
                     <Col>
-                        <View style={{position:'absolute',bottom:0, width:'100%'}}>
+                        <View style={views.buttonView}>
                             <Button
                                 block
-                                success
-                                onPress={this.handleButtonSaveClick}>
+                                onPress={this.handleButtonSaveClick}
+                                style={button.successColor}>
                                 <Text>Add</Text>
                             </Button>
                         </View>
                     </Col>
 
                     <Col>
-                        <View style={{position:'absolute',bottom:0, width:'100%'}}>
+                        <View style={views.buttonView}>
                             <Button
                                 block
                                 onPress={this.handleButtonSaveClick}
-                                style={{backgroundColor:"#767676"}}>
+                                style={button.closeColor}>
                                 <Text>
                                     Close
                                 </Text>
@@ -113,27 +116,3 @@ export default class NewTodoModal extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    view: {
-        flex: 1,
-        marginTop: 7,
-        marginLeft: 7,
-        marginRight: 7,
-        backgroundColor: "#f5fcff"
-    },
-    addButtonView: {
-        position:'absolute',
-        bottom:0,
-        width:'100%'
-    },
-    noteContent: {
-        height: 200,
-        textAlignVertical: 'top',
-    },
-    addButton: {
-        backgroundColor: "#21ba45"
-    },
-    addText: {
-        fontSize: 20
-    }
-})

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Item, Input, Text, Content, Title, Button, Form, H1 } from 'native-base';
 import { Modal } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
+import { todoEditMod, views, button } from '../../styles'
 
 
 export default class EditTodoModal extends Component  {
@@ -48,10 +49,10 @@ export default class EditTodoModal extends Component  {
                 visible={isOpen}
                 onRequestClose={() => {toggleModal()}}>
                 <DefaultHeader title={"Edit Todo"} toggleModal={toggleModal}/>
-                <View style={{flex:1}}>
+                <View style={views.flex1}>
                     <Content>
                         <Form>
-                            <View style={{flex:1}}>
+                            <View style={views.flex1}>
                                 <H1>Write your todo here:</H1>
                                 <Item>
                                     <Input
@@ -63,8 +64,10 @@ export default class EditTodoModal extends Component  {
                         </Form>
                     </Content>
                  </View>
-                <View style={{position:'absolute',bottom:0, width:'100%'}}>
-                    <Button block success onPress={this.handleButtonSaveClick}>
+                <View style={views.buttonView}>
+                    <Button block
+                            onPress={this.handleButtonSaveClick}
+                            style={button.successColor}>
                         <Text>Save</Text>
                     </Button>
                 </View>

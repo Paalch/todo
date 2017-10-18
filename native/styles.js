@@ -329,6 +329,9 @@ const eventMod = StyleSheet.create({
     }
 })
 
+/**
+ * Todo.js
+ */
 const todoStyle = StyleSheet.create({
     todo: {
         justifyContent : 'center',
@@ -357,13 +360,45 @@ const todoStyle = StyleSheet.create({
     }
 })
 
+/**
+ * TodoContainer.js
+ */
+const todoCont = StyleSheet.create({
+    view: {
+        flex: 1,
+        backgroundColor:"white"
+    },
+    endText: {
+        flex:1,
+        justifyContent:'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        fontSize: 25,
+        color:'#999999',
+        marginBottom:25,
+        marginTop:30,
+    }
+})
 
-
-
+/**
+ * NewTodoModal.js
+ */
+const todoNewMod = StyleSheet.create({
+    view: {
+        flex: 1,
+        marginTop: 7,
+        marginLeft: 7,
+        marginRight: 7,
+        backgroundColor: "#f5fcff"
+    },
+    addText: {
+        fontSize: 20
+    }
+})
 
 
 export { views, button, deleteMod, icons,
          navFooter, routes, homeComp, modalHead,
          noteStyle, noteCont, noteVwMod, noteNewMod, noteEditMod,
          eventStyle, eventCont, eventMod,
-         todoStyle, }
+         todoStyle, todoCont, todoNewMod }
