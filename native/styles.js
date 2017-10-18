@@ -95,7 +95,7 @@ const homeComp = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: 'white',
     },
     welcome: {
         fontSize: 25,
@@ -125,7 +125,16 @@ const homeComp = StyleSheet.create({
         marginLeft: 15,
         marginRight: 15
     },
-});
+
+    runBy: {
+        textAlign: 'center',
+        color: '#333333',
+        fontWeight: 'bold',
+        marginBottom: 10,
+        marginLeft: 15,
+        marginRight: 15
+    }
+})
 
 /**
  * DeleteModal.js
