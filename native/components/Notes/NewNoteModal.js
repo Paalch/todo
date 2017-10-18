@@ -54,7 +54,7 @@ export default class NewNoteModal extends Component {
 
     
     render() {
-        const { isOpen } = this.props
+        const { isOpen, toggleModal } = this.props
         const { title, content } = this.state
 
         return (
@@ -62,7 +62,7 @@ export default class NewNoteModal extends Component {
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("NewNoteModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={"New Note"} toggleModal={this.handleButtonCloseClick}/>
                     <Content >

@@ -52,7 +52,7 @@ export default class NewTodoModal extends Component {
 
 
     render() {
-        const { isOpen } = this.props
+        const { isOpen, toggleModal } = this.props
         const { text } = this.state
 
         return (
@@ -60,7 +60,7 @@ export default class NewTodoModal extends Component {
                 animationType="slide"
                 transparent={false}
                 visible={isOpen}
-                onRequestClose={() => {alert("NewTodoModal has been closed.")}}>
+                onRequestClose={() => {toggleModal()}}>
 
                 <DefaultHeader title={"New Todo"}
                                toggleModal={this.handleButtonCloseClick}/>
