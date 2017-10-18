@@ -362,6 +362,14 @@ const modalButtons = StyleSheet.create({
 		height:'100%'
 	},
 
+    delete: {
+		backgroundColor:'#db2828',
+		flex:1,
+		justifyContent:'center',
+		alignItems:'center',
+		height:'100%'
+    },
+
 	view: {
 		position:'absolute',
 		bottom: 0,
