@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { View, Item, Input, Text, Content, Title, Button, Form, H1 } from 'native-base';
-import { Modal } from 'react-native'
+import { View, Item, Input, Text, Content, Title, Button, Form, H1, Grid, Col } from 'native-base';
+import { Modal, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { todoEditMod, views, button } from '../../styles'
+import { modalButtons } from '../../styles'
 
 
 export default class EditTodoModal extends Component  {
@@ -10,7 +10,7 @@ export default class EditTodoModal extends Component  {
     constructor(props) {
         super(props)
 
-        //Sets state, tempConenet is the text in the textfield and content is the text from the todo object
+        //Sets state, tempContent is the text in the textfield and content is the text from the todo object
         this.state = {
             tempContent: this.props.content,
             content: this.props.content,
@@ -37,9 +37,20 @@ export default class EditTodoModal extends Component  {
         }
     }
 
+	/**
+	 * Handle for button close click.
+	 * Resets the original content to state
+	 * Closes model
+	 */
+	handleButtonCloseClick = () => {
+		const {toggleModal} = this.props
+		toggleModal()
+
+	}
+
     render() {
         //define constants
-        const { toggleModal, isOpen, onButtonSaveClick , content} = this.props
+        const { toggleModal, isOpen } = this.props
         const { tempContent } = this.state
 
         return (
@@ -64,13 +75,35 @@ export default class EditTodoModal extends Component  {
                         </Form>
                     </Content>
                  </View>
-                <View style={views.buttonView}>
-                    <Button block
-                            onPress={this.handleButtonSaveClick}
-                            style={button.successColor}>
-                        <Text>Save</Text>
-                    </Button>
+
+                <View style={modalButtons.view}>
+                    <Grid>
+                        <Col>
+                            <TouchableHighlight
+                                onPress={this.handleButtonSaveClick}
+                                style={modalButtons.save}>
+
+                                <Text style={modalButtons.text}>
+                                    SAVE
+                                </Text>
+
+                            </TouchableHighlight>
+                        </Col>
+                        <Col>
+
+                            <TouchableHighlight
+                                onPress={this.handleButtonCloseClick}
+                                style={modalButtons.close}>
+
+                                <Text style={modalButtons.text}>
+                                    CANCEL
+                                </Text>
+                            </TouchableHighlight>
+
+                        </Col>
+                    </Grid>
                 </View>
+
             </Modal>
 
         )

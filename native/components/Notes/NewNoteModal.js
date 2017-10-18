@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base';
-import { Modal } from 'react-native'
+import { View, Label, Item, Input, Text, Content , Button, Form, Grid, Col } from 'native-base'
+import { Modal, TouchableHighlight } from 'react-native'
 import DefaultHeader from '../DefaultHeader'
-import { noteNewMod, views, button } from '../../styles'
+import { noteNewMod, views, button, modalButtons } from '../../styles'
 
 export default class NewNoteModal extends Component {
 
@@ -65,10 +65,9 @@ export default class NewNoteModal extends Component {
                 onRequestClose={() => {alert("NewNoteModal has been closed.")}}>
 
                 <DefaultHeader title={"New Note"} toggleModal={this.handleButtonCloseClick}/>
-                <View style={noteNewMod.view}>
                     <Content >
                         <Form>
-                            <View style={noteNewMod.view}>
+                            <View style={modalButtons.flexView}>
                                 <Item floatingLabel>
                                     <Label>
                                         Title
@@ -79,7 +78,7 @@ export default class NewNoteModal extends Component {
                                 </Item>
                             </View>
 
-                            <View style={views.flex2}>
+                            <View>
                                 <Item floatingLabel>
                                     <Label>
                                         Content
@@ -88,41 +87,40 @@ export default class NewNoteModal extends Component {
                                         onChangeText={(content) => this.setState({content})}
                                         value={content}
                                         multiline={true}
-                                        style={noteNewMod.noteContent}/>
+                                        style={modalButtons.multiLineInput}/>
                                 </Item>
                             </View>
                         </Form>
                     </Content>
 
-                </View>
-                <Grid>
 
-                    <Col>
-                        <View style={views.buttonView}>
-                            <Button
-                                block
-                                style={{backgroundColor:'#21BA45'}}
-                                onPress={this.handleButtonSaveClick}>
-                                <Text>Add</Text>
-                            </Button>
-                        </View>
-                    </Col>
+                    <View style={modalButtons.view}>
+                        <Grid>
+                            <Col>
+                                <TouchableHighlight
+                                    onPress={this.handleButtonSaveClick}
+                                    style={modalButtons.save}>
 
-                    <Col>
-                        <View style={views.buttonView}>
-                            <Button
-                                block
-                                onPress={this.handleButtonSaveClick}
-                                style={button.closeColor}>
-                                <Text>
-                                    Close
-                                </Text>
-                            </Button>
-                        </View>
-                    </Col>
+                                    <Text style={modalButtons.text}>
+                                        ADD
+                                    </Text>
 
-                </Grid>
+                                </TouchableHighlight>
+                            </Col>
+                            <Col>
 
+                                <TouchableHighlight
+                                    onPress={this.handleButtonCloseClick}
+                                    style={modalButtons.close}>
+
+                                    <Text style={modalButtons.text}>
+                                        CANCEL
+                                    </Text>
+                                </TouchableHighlight>
+
+                            </Col>
+                        </Grid>
+                    </View>
             </Modal>
         )
     }

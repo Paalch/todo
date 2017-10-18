@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { View,Content, Label, Grid, Col, Button, Text } from 'native-base';
-import { Modal } from 'react-native'
+import { Modal, TouchableHighlight } from 'react-native'
 import DefaultHeader from './DefaultHeader'
-import { views, button, deleteMod } from '../styles'
+import { views, button, deleteMod, modalButtons } from '../styles'
 
 export default class DeleteModal extends Component {
 
@@ -47,33 +47,34 @@ export default class DeleteModal extends Component {
                         '{ title }'
                     </Label>
                 </View>
-                <Grid>
 
-                    <Col>
-                        <View style={views.buttonView}>
-                            <Button
-                                block
+                <View style={modalButtons.view}>
+                    <Grid>
+                        <Col>
+                            <TouchableHighlight
                                 onPress={this.handleButtonDeleteClick}
-                                style={button.failColor}>
-                                <Text>Delete</Text>
-                            </Button>
-                        </View>
-                    </Col>
+                                style={modalButtons.delete}>
 
-                    <Col>
-                        <View style={views.buttonView}>
-                            <Button
-                                block
-                                onPress={this.handleButtonCloseClick}
-                                style={button.closeColor}>
-                                <Text>
-                                    Cancel
+                                <Text style={modalButtons.text}>
+                                    DELETE
                                 </Text>
-                            </Button>
-                        </View>
-                    </Col>
 
-                </Grid>
+                            </TouchableHighlight>
+                        </Col>
+                        <Col>
+
+                            <TouchableHighlight
+                                onPress={this.handleButtonCloseClick}
+                                style={modalButtons.close}>
+
+                                <Text style={modalButtons.text}>
+                                    CANCEL
+                                </Text>
+                            </TouchableHighlight>
+
+                        </Col>
+                    </Grid>
+                </View>
 
             </Modal>
         )

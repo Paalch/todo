@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import DatePicker from 'react-native-datepicker'
-import { Modal, Text, View } from 'react-native';
+import { Modal, Text, View, TouchableHighlight } from 'react-native';
 import { Header, Button, Icon, Item, Input, Form, Grid, Col, H3 } from 'native-base';
 import DefaultHeader from '../DefaultHeader'
-import { eventMod, views, button } from '../../styles'
+import { eventMod, views, modalButtons } from '../../styles'
 
 import moment from 'moment'
 
@@ -53,7 +53,7 @@ export default class CreateEvent extends Component {
 
     render() {
         //Define constants
-        const { text, where, open, date, time } = this.state
+        const { text, where } = this.state
         const { toggleModal, isOpen } = this.props
 
         return(
@@ -105,34 +105,33 @@ export default class CreateEvent extends Component {
                     onDateChange={(date) => {this.setState({date: date})}}
                 />
                 </View>
-
-                <View style={views.flex1}>
+                <View style={modalButtons.view}>
                     <Grid>
                         <Col>
-                            <View style={views.buttonView}>
-                                <Button block
-                                        onPress={this.createEvent}
-                                        style={button.successColor}>
-                                    <Text>
-                                        Add
-                                    </Text>
-                                </Button>
-                            </View>
-                        </Col>
+                            <TouchableHighlight
+                                onPress={this.createEvent}
+                                style={modalButtons.save}>
 
+                                <Text style={modalButtons.text}>
+                                    ADD
+                                </Text>
+
+                            </TouchableHighlight>
+                        </Col>
                         <Col>
-                            <View style={views.buttonView}>
-                                <Button block
-                                        onPress={this.handleClose}
-                                        style={button.closeColor}>
-                                    <Text>Close</Text>
-                                </Button>
-                            </View>
-                        </Col>
 
+                            <TouchableHighlight
+                                onPress={this.handleClose}
+                                style={modalButtons.close}>
+
+                                <Text style={modalButtons.text}>
+                                    CANCEL
+                                </Text>
+                            </TouchableHighlight>
+
+                        </Col>
                     </Grid>
                 </View>
-
             </Modal>
         )
     }
