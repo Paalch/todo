@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Text, View, Button, StyleSheet } from 'react-native'
 import { Router, Stack, Scene, Actions } from 'react-native-router-flux'
 import { Container, Content } from 'native-base'
 import NoteContainer from './components/Notes/NoteContainer'
